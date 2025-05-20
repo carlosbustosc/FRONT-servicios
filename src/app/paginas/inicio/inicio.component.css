@@ -1,0 +1,123 @@
+
+.contenedor_principal_inicio{
+
+    width: 100%;
+    display: table;
+}
+
+.contenedor_titulo_boton{
+
+    width: auto;
+    margin: auto;
+    display: table;
+    position: relative;
+    z-index: 1;
+}
+
+.fondo_seccion1{
+
+    background-image:url('../../../assets/img/busco_servicios.jpg');
+    height: 100vh;
+    position:relative;
+    background-size: cover;
+    background-position: -500px;
+    display: grid;
+}
+
+
+.fondo_seccion2{
+    background-image:url('../../../assets/img/ofresco_servicios.png');
+    height: 100vh;
+    position: relative;
+    padding: 0px;
+    display: grid;
+    background-size: cover;
+}
+
+.mascara_imagen{
+
+    width: 100%;
+    height: 100vh;
+    background-color: #000000bd;
+    position: absolute;
+    z-index: 0;
+}
+
+.titulo1{
+    color: #fff;
+    font-family: 'impact';
+    font-size: clamp(30px, 5vw, 65px);
+}
+.titulo2 {
+    font-size: clamp(20px, 6vw, 40px);
+    color: #fff;
+    font-family: 'OpenSans-Regular';
+    padding-left: 54px;
+    position: relative;
+        top: -22px;
+}
+
+.boton1 {
+    background-color: #EE00D1;
+    border: none;
+    color: #fff;
+    padding: 1px 11px 3px 11px;
+    font-family: 'OpenSans-Regular';
+    float: right;
+    font-size: clamp(15px, 5vw, 16px);
+    border-radius: 2px;
+    position: relative;
+    top: -20px;
+    left: 6px;
+
+}
+
+.boton1:hover{
+    background-color: #fff;
+    color:#ee00d1;
+}
+
+
+.boton2{
+    background-color: inherit;
+    border: 1px solid #ee00d1;
+    color: #fff;
+    padding: 1px 11px 3px 11px;
+    font-family: 'OpenSans-Regular';
+    float: right;
+    font-size: clamp(15px, 5vw, 15px);
+    border-radius: 4px;
+    position: relative;
+    top: 40px;
+    left: 110px;
+    top: 19px;
+    
+}
+
+.boton2:hover{
+    background-color: #fff;
+    color:#ee00d1;
+}
+
+.boton1.fondo_azul {
+    background-color: #01E1F6;
+    color: #000;
+}
+
+.boton1.fondo_azul:hover{
+    background-color: #fff;
+    color:#026972;
+}
+
+.boton2.border_azul {
+    border: 1px solid #01E1F6;
+}
+
+.boton2.border_azul:hover{
+    background-color: #fff;
+    color:#026972;
+}
+
+.row {
+    margin: 0px;
+}

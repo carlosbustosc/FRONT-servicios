@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'impact';
+  src: url(./assets/fonts/impact.eot);
+  src: url(./assets/fonts/impact.eot?#iefix) format('embedded-opentype'),
+       url(./assets/fonts/impact.otf) format('otf'),
+       url(./assets/fonts/impact.svg#impact) format('svg'),
+       url(./assets/fonts/impact.woff2) format('woff2'),
+       url(./assets/fonts/impact.woff) format('woff'),
+       url(./assets/fonts/impact.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'OpenSans-MediumItalic';
+  src: url(./assets/fonts/OpenSans-MediumItalic.eot);
+  src: url(./assets/fonts/OpenSans-MediumItalic.eot?#iefix) format('embedded-opentype'),
+       url(./assets/fonts/OpenSans-MediumItalic.otf) format('otf'),
+       url(./assets/fonts/OpenSans-MediumItalic.svg#OpenSans-MediumItalic) format('svg'),
+       url(./assets/fonts/OpenSans-MediumItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url(./assets/fonts/OpenSans-Regular.eot);
+  src: url(./assets/fonts/OpenSans-Regular.eot?#iefix) format('embedded-opentype'),
+       url(./assets/fonts/OpenSans-Regular.otf) format('otf'),
+       url(./assets/fonts/OpenSans-Regular.svg#OpenSans-Regular) format('svg'),
+       url(./assets/fonts/OpenSans-Regular.woff2) format('woff2'),
+       url(./assets/fonts/OpenSans-Regular.woff) format('woff'),
+       url(./assets/fonts/OpenSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: url(./assets/fonts/OpenSans-SemiBold.eot);
+  src: url(./assets/fonts/OpenSans-SemiBold.eot?#iefix) format('embedded-opentype'),
+       url(./assets/fonts/OpenSans-SemiBold.otf) format('otf'),
+       url(./assets/fonts/OpenSans-SemiBold.svg#OpenSans-SemiBold) format('svg'),
+       url(./assets/fonts/OpenSans-SemiBold.ttf) format('truetype'),
+       url(./assets/fonts/OpenSans-SemiBold.woff) format('woff'),
+       url(./assets/fonts/OpenSans-SemiBold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url(./assets/fonts/OpenSans-Bold.eot);
+  src: url(./assets/fonts/OpenSans-Bold.eot?#iefix) format('embedded-opentype'),
+       url(./assets/fonts/OpenSans-Bold.otf) format('otf'),
+       url(./assets/fonts/OpenSans-Bold.svg#OpenSans-Bold) format('svg'),
+       url(./assets/fonts/OpenSans-Bold.woff2) format('woff2'),
+       url(./assets/fonts/OpenSans-Bold.woff) format('woff'),
+       url(./assets/fonts/OpenSans-Bold.ttf) format('truetype');
+}
+
+
+/*bootstrasp*/
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}

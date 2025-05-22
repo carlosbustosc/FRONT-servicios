@@ -16,7 +16,7 @@ const routes: Routes = [
 
   { path:"inicio",          component:InicioComponent },
   { path:"servicios",       component:BuscoServiciosComponent},
-  { path:"verServicios",    component:VerServiciosComponent },
+  { path:"verServicios/:id",    component:VerServiciosComponent },
   { path:"loginCliente",    component: LoginClienteComponent },
   { path:"loginTrabajador", component: LoginTrabajadorComponent },
   { path:"loginAdmin",      component:LoginAdminComponent},

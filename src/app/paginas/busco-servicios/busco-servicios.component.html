@@ -91,15 +91,27 @@
             <div class="row contenedor_busqueda">
                 
                 <div class="col-md-4">
-                    <app-tarjetas></app-tarjetas>
+                    <app-tarjetas
+                    (verPerfilHijo)="verPerfilPadre()"
+                    (verServiciosHijo)="verServiciosPadre( $event )"
+                    >
+                    </app-tarjetas>
                 </div>
 
                 <div class="col-md-4">
-                    <app-tarjetas></app-tarjetas>
+                    <app-tarjetas
+                    (verPerfilHijo)="verPerfilPadre()"
+                    (verServiciosHijo)="verServiciosPadre( $event )"
+                    >
+                    </app-tarjetas>
                 </div>
 
                 <div class="col-md-4">
-                    <app-tarjetas></app-tarjetas>
+                    <app-tarjetas
+                    (verPerfilHijo)="verPerfilPadre()"
+                    (verServiciosHijo)="verServiciosPadre( $event )"
+                    >
+                    </app-tarjetas>
                 </div>
 
             </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tarjetas',
@@ -6,5 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./tarjetas.component.css']
 })
 export class TarjetasComponent {
+
+  constructor(){
+
+  }
+  
+  
+  @Output() verPerfilHijo     = new EventEmitter;
+  @Output() verServiciosHijo  = new EventEmitter;
+
+
+
+  verPerfil(){
+    
+    this.verPerfilHijo.emit();
+  }
+
+
+  verServicios( numero:any ){
+    
+    this.verServiciosHijo.emit( numero );
+  
+  }
 
 }

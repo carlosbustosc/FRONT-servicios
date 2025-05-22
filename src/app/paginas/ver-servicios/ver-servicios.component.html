@@ -1,0 +1,101 @@
+
+<app-navbar></app-navbar>
+
+<div class="contenedor_perfil_servicios">
+    <button class="boton_volver posicion_volver" [routerLink]="['servicios']">Volver</button>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="foto_perfil"></div>
+        </div>
+        <div class="col-md-10">
+            <h1 class="nombre_persona">Camila Amaya</h1>
+            <p class="categoria_servicio">Catagoria Mecanica</p>
+        </div>
+    </div>
+
+    <hr class="linea_divisora">
+
+    <p class="texto_perfil">Seleccione el servicio y la intensidad del Horaria, que desea para que la persona pueda cumplir con el servicio. una vez tenga uno o varios servicios seleccionados,  la fecha, y hora confirmar el servicio y le sera notificado a la persona.</p>
+
+    <div class="row">
+        <h2 class="nombre_persona2">Servicios</h2>
+
+        <app-tarjeta-servicios></app-tarjeta-servicios>
+        <app-tarjeta-servicios></app-tarjeta-servicios>
+    </div>
+
+    <hr class="linea_divisora">
+    <h3 class="nombre_persona_ltsx">Agendar servicios seleccionados</h3>
+
+    <div class="base_seleccionados">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="titulo_tabla">Tipo de servicio</h3>
+            </div>
+            <div class="col-md-4">
+                <h3 class="titulo_tabla">Fracción</h3>
+            </div>
+            <div class="col-md-4">
+                <h3 class="titulo_tabla">precio COP</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p class="nombre_servicio">Limpieza de cocina</p>
+                <p class="nombre_servicio">Limpieza de cocina</p>
+
+                <p class="nombre_servicio txt_bold">Total:</p>
+            </div>
+             <div class="col-md-4">
+                <p class="nombre_servicio">Servicio</p>
+                <p class="nombre_servicio">5 Horas</p>
+             </div>
+             <div class="col-md-4">
+                <p class="nombre_servicio">$ 50.000</p>
+                <p class="nombre_servicio">$ 50.000</p>
+
+                <p class="nombre_servicio txt_bold">$ 100.000</p>
+            </div>
+        </div>
+
+        <hr class="linea_divisora2">
+        
+        <form>
+            <div class="row caja_agendamiento">
+                <div class="col-md-4">
+                    <label class="txt_input">Seleccionar dia</label>
+                    <select class="form-control">
+                        <option>Seleccionar dia</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="txt_input">Seleccionar dia</label>
+                    <select class="form-control">
+                        <option>Seleccionar dia</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="txt_input">Seleccionar Hora</label>
+                    <select class="form-control">
+                        <option>Seleccionar Hora</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="txt_input">Direccion del servicio</label>
+                    <select class="form-control">
+                        <option>Seleccionar Hora</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="txt_input">Direccion del servicio</label>
+                    <select class="form-control">
+                        <option>Seleccionar Hora</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button class="boton_agendar">Agendar Servicio</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,16 +1,26 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
 //importar modulos
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { BuscoServiciosComponent } from './paginas/busco-servicios/busco-servicios.component';
+import { VerServiciosComponent } from './paginas/ver-servicios/ver-servicios.component';
+import { LoginClienteComponent } from './paginas/login-cliente/login-cliente.component';
+import { LoginTrabajadorComponent } from './paginas/login-trabajador/login-trabajador.component';
+import { LoginAdminComponent } from './paginas/login-admin/login-admin.component';
+import { RegistrarTrabajadorComponent } from './paginas/registrar-trabajador/registrar-trabajador.component';
 
 const routes: Routes = [
 
-  { path:"inicio",     component:InicioComponent },
-  { path:"servicios",  component:BuscoServiciosComponent},
-  { path:"**", pathMatch:"full", redirectTo:"servicios"}
+  { path:"inicio",          component:InicioComponent },
+  { path:"servicios",       component:BuscoServiciosComponent},
+  { path:"verServicios",    component:VerServiciosComponent },
+  { path:"loginCliente",    component: LoginClienteComponent },
+  { path:"loginTrabajador", component: LoginTrabajadorComponent },
+  { path:"loginAdmin",      component:LoginAdminComponent},
+  { path:"RegistrarTrabajador", component:RegistrarTrabajadorComponent },
+  { path:"**", pathMatch:"full", redirectTo:""},
 
 ];
 

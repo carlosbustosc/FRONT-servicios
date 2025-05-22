@@ -58,3 +58,53 @@
 .selector-for-some-widget {
   box-sizing: content-box;
 }
+
+.boton_volver{
+    font-family: 'OpenSans-SemiBold';
+    padding: 5px 9px 6px 11px;
+    font-size: 14px;
+    border: none;
+    background-color: #1fc6d7;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;  
+}
+
+
+/*logins*/
+
+.contenedor_login{
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+
+}
+
+
+
+.borde_formulario{
+
+    border: 1px solid #8bbabf;
+    font-size: 14px;
+    width: 100%;
+    font-family: 'OpenSans-Regular';
+
+}
+
+
+.estilo_botones {
+    background-color: inherit;
+    border: 1px solid #01E1F6;
+    color: #fff;
+    padding: 1px 11px 3px 11px;
+    font-family: 'OpenSans-Regular';
+    font-size: clamp(15px, 5vw, 15px);
+    border-radius: 4px;
+    position: relative;
+    top: 0px;
+}

@@ -9,7 +9,7 @@
                 <h2 class="titulo1">Busco</h2>
                 <h3 class="titulo2">servicios</h3>
                 <button type="button" class="boton1" routerLink="/servicios">Buscar</button>
-                <button type="button" class="boton2">Login</button>
+                <button type="button" class="boton2" [routerLink]="['/loginCliente']">Login</button>
             </div>
         </div>
         <div class="col-md-6 fondo_seccion2">
@@ -17,8 +17,8 @@
             <div class="contenedor_titulo_boton">
                 <h2 class="titulo1">Ofresco</h2>
                 <h3 class="titulo2">servicios</h3>
-                <button type="button" class="boton1 fondo_azul">Buscar</button>
-                <button type="button" class="boton2 border_azul">Login</button>
+                <button type="button" class="boton1 fondo_azul"  [routerLink]="['/RegistrarTrabajador']">Registrarme</button>
+                <button type="button" class="boton2 border_azul" [routerLink]="['/loginTrabajador']">Login</button>
             </div>
         </div>
     </div>

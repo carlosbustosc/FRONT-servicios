@@ -1,0 +1,44 @@
+
+
+
+.nombre_persona{
+
+    font-size: 18px;
+    font-family: 'OpenSans-SemiBold';
+    text-align: center;
+    margin-bottom: 17px;
+    color: #0099a8;
+}
+
+.contenedor_foto_persona {
+    width: 167px;
+    height: 150px;
+    margin: auto;
+    background-image: url('../../../assets/img/foto_perfil.jpg');
+    background-size: cover;    
+}
+
+
+.txt_ver_perfil {
+    
+    font-family: 'OpenSans-SemiBold';
+    text-decoration: underline;
+    font-size: 15px;
+    padding-top: 8px;
+    text-align: center;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.ver_servicios {
+    font-family: 'OpenSans-SemiBold';
+    font-size: 15px;
+    padding: 3px 2px 3px 2px;
+    text-align: center;
+    background-color: #1fc6d7;
+    width: 157px;
+    margin: 0px auto 50px auto;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}

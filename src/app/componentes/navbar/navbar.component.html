@@ -1,1 +1,22 @@
-<p>navbar works!</p>
+
+
+
+<div class="row contenedor_header">
+    <div class="col-md-3">
+        <p class="logo_servicio">Serviz</p>
+    </div>
+    <div class="col-md-7">
+        <p class="txt_buscar_servicio" [routerLink]="['/inicio']">Inicio</p>
+        <p class="txt_buscar_servicio" [routerLink]="['/servicios']">Buscar Servicios</p>
+    </div>
+    <div class="col-md-2">
+        <p class="ingreso" (click)="Menu()">Login</p>
+    </div>
+    <div class="base_ingreso" *ngIf="mostrarMenu">
+        <a class="boton_ingreso"               [routerLink]="['/loginCliente']">Cliente</a>
+        <a class="boton_ingreso"               [routerLink]="['/loginTrabajador']">Trabajador</a>
+        <a class="boton_ingreso quitar_border" [routerLink]="['/loginAdmin']">Administrador</a>
+    </div>
+</div>
+
+

@@ -1,1 +1,110 @@
-<p>busco-servicios works!</p>
+
+<app-navbar></app-navbar>
+
+<div class="contenedor_total">
+    <div class="contenedor_principal_buscar">
+
+        <button type="button" class="boton_volver posicion_volver" [routerLink]="['/inicio']">Volver</button>
+
+
+        <!---slider-->
+        <div id="carouselExampleInterval" class="carousel slide bajar_carrusel " data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                <img src="../../../assets/img/busco_servicios.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                <img src="../../../assets/img/ofresco_servicios.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="../../../assets/img/busco_servicios.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!--fin slider-->
+
+        <h1 class="titulo_seccion"><span class="buscar_servicio">Buscar servicio</span></h1>
+    
+        <h2 class="subtitulo_seccion">Encontraras personas aptas para tu necesidad</h2>
+        <!--<hr class="linea_divisora">-->
+
+        <p class="descripcion_pagina"> * Seleccione la opción que desea buscar, para encontrar una persona que pueda ayudarte con tu servicio.</p>
+
+        <!---formulario-->
+        <form class="formulario_busqueda">
+            <div class="form-group bajar_selects">
+                <label class="txt_label">La busqueda esta ligado a tu ciudad de residencia</label>
+                <select class="form-control">
+                    <option value="">Elige una option</option>
+                </select>
+            </div>
+
+            <div class="form-group bajar_selects">
+                <label class="txt_label">La busqueda esta ligado a tu ciudad de residencia</label>
+                <select class="form-control">
+                    <option value="">Elige una option</option>
+                </select>
+            </div>
+
+            <div class="form-group bajar_selects">
+                <label class="txt_label">La busqueda esta ligado a tu ciudad de residencia</label>
+                <select class="form-control">
+                    <option value="">Elige una option</option>
+                </select>
+            </div>
+
+            <div class="form-group bajar_selects">
+                <button type="button" class="boton_buscar">Buscar personas</button>
+            </div>
+        </form>
+
+        <hr class="linea_divisora">
+        <p class="descripcion_pagina">A continuacion podrás ver las personas en tu ciudad que realizan este trabajo, para conocer mas sobre el o ella, ver a su perfil.</p>
+
+        <div class="contenedor_de_resultados">
+
+            <!---
+            <div class="row fondo_imagen_resultado">
+                <div class="col-md-5 fondo_titulo">
+                    <div class="base_titulo">
+                        <h2 class="titulo_resultado">Personas</h2>
+                        <p class="texto_resultado">que ofrecen este servicio</p>
+                    </div>
+                </div>
+                <div class="col-md-7"></div>
+            </div>
+            -->
+
+            <div class="row">
+                <h2 class="titulo_resultado">Personas</h2>
+                <p class="texto_resultado">que ofrecen este servicio</p>
+            </div>
+
+            <div class="row contenedor_busqueda">
+                
+                <div class="col-md-4">
+                    <app-tarjetas></app-tarjetas>
+                </div>
+
+                <div class="col-md-4">
+                    <app-tarjetas></app-tarjetas>
+                </div>
+
+                <div class="col-md-4">
+                    <app-tarjetas></app-tarjetas>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

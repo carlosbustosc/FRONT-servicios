@@ -5,13 +5,22 @@
     <div class="col-md-3">
         <p class="logo_servicio">Serviz</p>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-5">
         <p class="txt_buscar_servicio" [routerLink]="['/inicio']">Inicio</p>
         <p class="txt_buscar_servicio" [routerLink]="['/servicios']">Buscar Servicios</p>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
         <p class="ingreso" (click)="Menu()">Login</p>
+        <p class="ingreso registro" (click)="MenuRegistro()">Registrarme</p>
     </div>
+    
+    <div class="base_ingreso2" *ngIf="mostrarMenuRegistrarme">
+         <a class="boton_ingreso2"               [routerLink]="['/registrarCliente']">Cliente</a>
+        <a class="boton_ingreso2"               [routerLink]="['/RegistrarTrabajador']">Trabajador</a>
+
+       
+    </div>
+
     <div class="base_ingreso" *ngIf="mostrarMenu">
         <a class="boton_ingreso"               [routerLink]="['/loginCliente']">Cliente</a>
         <a class="boton_ingreso"               [routerLink]="['/loginTrabajador']">Trabajador</a>

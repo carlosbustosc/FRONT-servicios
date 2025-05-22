@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login-hijo',
@@ -11,6 +11,15 @@ export class LoginComponent {
   
   @Input() usuarioHijo:any
   @Input() imagenHijo:any
+  
+  
+  @Output() clickHijo = new EventEmitter;
+  
 
+  volverPantalla(){
+    
+    this.clickHijo.emit()
+
+  }
 
 }

@@ -63,12 +63,12 @@
     color: #fff;
     padding: 1px 11px 3px 11px;
     font-family: 'OpenSans-Regular';
-    float: right;
-    font-size: clamp(15px, 5vw, 16px);
+    float: left;
+    font-size: clamp(15px, 5vw, 15px);
     border-radius: 2px;
     position: relative;
     top: -20px;
-    left: 6px;
+    left: 122px;
 
 }
 
@@ -79,19 +79,19 @@
 
 
 .boton2{
-    background-color: inherit;
+background-color: inherit;
     border: 1px solid #ee00d1;
     color: #fff;
     padding: 1px 11px 3px 11px;
     font-family: 'OpenSans-Regular';
-    float: right;
+    /* float: right; */
     font-size: clamp(15px, 5vw, 15px);
     border-radius: 4px;
     position: relative;
     top: 40px;
-    left: 110px;
+    left: 43px;
     top: 19px;
-    
+    margin: 0px 9px;
 }
 
 .boton2:hover{
@@ -102,6 +102,8 @@
 .boton1.fondo_azul {
     background-color: #01E1F6;
     color: #000;
+    left: 101px;
+    font-size: clamp(15px, 5vw, 15px)
 }
 
 .boton1.fondo_azul:hover{
@@ -110,7 +112,9 @@
 }
 
 .boton2.border_azul {
+    
     border: 1px solid #01E1F6;
+    left: 31px
 }
 
 .boton2.border_azul:hover{

@@ -18,12 +18,12 @@
     font-family: 'OpenSans-Regular';
     padding: 2px 10px 3px 10px;
     border-radius: 4px;
-    border: 1px solid #fff;
+    border: 1px solid #bdbdbd;
     width: max-content;
-    margin-top: 9px;
+    margin-top: 10px;
     float: right;
-    margin-right: 30px;
-    cursor:pointer;
+    margin-right: 35px;
+    cursor: pointer;
 }
 
 .txt_buscar_servicio {
@@ -79,6 +79,35 @@
     text-align: center;
     box-sizing: border-box;
     cursor:pointer;
+}
+
+
+.boton_ingreso2 {
+    background-color: inherit;
+    border-bottom: 1px solid #454d4e;
+    color: #454d4e;
+    padding: 0px 12px 10px 12px;
+    font-family: 'OpenSans-Regular';
+    font-size: clamp(14px, 5vw, 13px);
+    position: relative;
+    top: 0px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 12px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.base_ingreso2 {
+    width: 100px;
+    display: table;
+    background-color: #ffffff;
+    padding: 16px 20px 10px 20px;
+    right: 166px;
+    top: 50px;
+    position: absolute;
 }
 
 .quitar_border{

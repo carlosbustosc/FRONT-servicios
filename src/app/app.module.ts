@@ -15,6 +15,7 @@ import { LoginComponent } from './componentes/login-hijo/login-hijo.component';
 import { LoginTrabajadorComponent } from './paginas/login-trabajador/login-trabajador.component';
 import { LoginAdminComponent } from './paginas/login-admin/login-admin.component';
 import { RegistrarTrabajadorComponent } from './paginas/registrar-trabajador/registrar-trabajador.component';
+import { RegistrarClienteComponent } from './paginas/registrar-cliente/registrar-cliente.component';
 
 
 
@@ -33,7 +34,8 @@ import { RegistrarTrabajadorComponent } from './paginas/registrar-trabajador/reg
     LoginComponent,
     LoginTrabajadorComponent,
     LoginAdminComponent,
-    RegistrarTrabajadorComponent
+    RegistrarTrabajadorComponent,
+    RegistrarClienteComponent
 
   ],
   imports: [

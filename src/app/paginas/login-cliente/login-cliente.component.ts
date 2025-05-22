@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login-cliente',
@@ -11,5 +12,14 @@ export class LoginClienteComponent {
   
   usuarioCliente = "Clientes"
   imagenFondoClientes = '../../../assets/img/busco_servicios.jpg'
+  
+  constructor( private volver:Location ){
+
+  }
+
+  volverPantalla(){
+    
+    this.volver.back()
+  }
 
 }

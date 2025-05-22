@@ -10,6 +10,7 @@ import { LoginClienteComponent } from './paginas/login-cliente/login-cliente.com
 import { LoginTrabajadorComponent } from './paginas/login-trabajador/login-trabajador.component';
 import { LoginAdminComponent } from './paginas/login-admin/login-admin.component';
 import { RegistrarTrabajadorComponent } from './paginas/registrar-trabajador/registrar-trabajador.component';
+import { RegistrarClienteComponent } from './paginas/registrar-cliente/registrar-cliente.component';
 
 const routes: Routes = [
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path:"loginTrabajador", component: LoginTrabajadorComponent },
   { path:"loginAdmin",      component:LoginAdminComponent},
   { path:"RegistrarTrabajador", component:RegistrarTrabajadorComponent },
-  { path:"**", pathMatch:"full", redirectTo:""},
+  { path:"registrarCliente", component:RegistrarClienteComponent },
+  { path:"**", pathMatch:"full", redirectTo:"RegistrarTrabajador"}
 
 ];
 

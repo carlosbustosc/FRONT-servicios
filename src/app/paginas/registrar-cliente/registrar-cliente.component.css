@@ -1,17 +1,14 @@
 
 .contenedor_registros{
 
-width: 100%;
+    width: 100%;
     margin: 0px auto 0px auto;
     display: table;
     position: relative;
     z-index: 1;
-    /* height: 100vh; */
+    height: 100vh;
     background-size: cover;
-    margin-bottom: 90px;
 }
-
-
 
 .formulario_registro{
 

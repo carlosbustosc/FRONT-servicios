@@ -17,6 +17,11 @@ import { LoginAdminComponent } from './paginas/login-admin/login-admin.component
 import { RegistrarTrabajadorComponent } from './paginas/registrar-trabajador/registrar-trabajador.component';
 import { RegistrarClienteComponent } from './paginas/registrar-cliente/registrar-cliente.component';
 
+import { HttpClientModule } from '@angular/common/http'
+
+//importar modulo formularios reactivos
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -40,7 +45,9 @@ import { RegistrarClienteComponent } from './paginas/registrar-cliente/registrar
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   
   ],
   providers: [],

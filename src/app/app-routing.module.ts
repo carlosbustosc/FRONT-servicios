@@ -12,11 +12,14 @@ import { LoginAdminComponent } from './paginas/login-admin/login-admin.component
 import { RegistrarTrabajadorComponent } from './paginas/registrar-trabajador/registrar-trabajador.component';
 import { RegistrarClienteComponent } from './paginas/registrar-cliente/registrar-cliente.component';
 
+
+
+
 const routes: Routes = [
 
   { path:"inicio",          component:InicioComponent },
   { path:"servicios",       component:BuscoServiciosComponent},
-  { path:"verServicios/:id",    component:VerServiciosComponent },
+  { path:"verServicios",    component:VerServiciosComponent },
   { path:"loginCliente",    component: LoginClienteComponent },
   { path:"loginTrabajador", component: LoginTrabajadorComponent },
   { path:"loginAdmin",      component:LoginAdminComponent},

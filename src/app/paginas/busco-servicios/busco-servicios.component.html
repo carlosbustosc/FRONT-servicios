@@ -39,30 +39,49 @@
         <p class="descripcion_pagina"> * Seleccione la opción que desea buscar, para encontrar una persona que pueda ayudarte con tu servicio.</p>
 
         <!---formulario-->
-        <form class="formulario_busqueda">
+        <form class="formulario_busqueda" [formGroup]="formularioBusqueda">
             <div class="form-group bajar_selects">
-                <label class="txt_label">La busqueda esta ligado a tu ciudad de residencia</label>
-                <select class="form-control">
-                    <option value="">Elige una option</option>
+                <label class="txt_label">Departamento de residencia</label>
+                <select class="form-control" #val (change)="valorDepartamento( val.value )" formControlName="departamento">
+                    <option [value]="i" *ngFor="let depart of departamentos; let i  = index">{{ depart.departamento }}</option>
                 </select>
+
+                <small class="text-danger" *ngIf="validarDepartamento">seleccione un departamento</small>
+
+            </div>
+
+
+             <div class="form-group bajar_selects">
+                <label class="txt_label">Ciudad de residencia</label>
+                <select class="form-control" formControlName="ciudad">
+                    <option [value]="city" *ngFor="let city of ciudades">{{ city }}</option>
+                </select>
+
+                <small class="text-danger" *ngIf="validarCiudad">seleccione una ciudad</small>
+
             </div>
 
             <div class="form-group bajar_selects">
-                <label class="txt_label">La busqueda esta ligado a tu ciudad de residencia</label>
-                <select class="form-control">
-                    <option value="">Elige una option</option>
+                <label class="txt_label">Seleccione la categoria del servicio que desea</label>
+                <select class="form-control" #val2 (change)="obtenerPrimerCategoria( val2.value )" formControlName="categoria">
+                    <option [value]="categoria" *ngFor="let categoria of categoriasUnicas">{{ categoria }}</option>
                 </select>
+
+                <small class="text-danger" *ngIf="validarCategoria">seleccione una categoria</small>
             </div>
 
             <div class="form-group bajar_selects">
-                <label class="txt_label">La busqueda esta ligado a tu ciudad de residencia</label>
-                <select class="form-control">
-                    <option value="">Elige una option</option>
+                <label class="txt_label">Eliga un</label>
+                <select class="form-control" formControlName="subcategoria">
+                    <option [value]="subcategoria" *ngFor="let subcategoria of subCategoriasUnicas">{{ subcategoria }}</option>
                 </select>
+
+                <small class="text-danger" *ngIf="validarSubcategoria">seleccione una subcategoria</small>
+
             </div>
 
             <div class="form-group bajar_selects">
-                <button type="button" class="boton_buscar">Buscar personas</button>
+                <button type="button" class="boton_buscar" (click)="buscarPersona()">Buscar personas</button>
             </div>
         </form>
 
@@ -90,29 +109,14 @@
 
             <div class="row contenedor_busqueda">
                 
-                <div class="col-md-4">
+                <div class="col-md-4" *ngFor="let tarjeta of guardarTrabajadores">
                     <app-tarjetas
-                    (verPerfilHijo)="verPerfilPadre()"
+                    (verPerfilHijo)="verPerfilPadre( $event )"
                     (verServiciosHijo)="verServiciosPadre( $event )"
-                    >
+                    [informacionPerfil]="tarjeta">
                     </app-tarjetas>
                 </div>
 
-                <div class="col-md-4">
-                    <app-tarjetas
-                    (verPerfilHijo)="verPerfilPadre()"
-                    (verServiciosHijo)="verServiciosPadre( $event )"
-                    >
-                    </app-tarjetas>
-                </div>
-
-                <div class="col-md-4">
-                    <app-tarjetas
-                    (verPerfilHijo)="verPerfilPadre()"
-                    (verServiciosHijo)="verServiciosPadre( $event )"
-                    >
-                    </app-tarjetas>
-                </div>
 
             </div>
         </div>

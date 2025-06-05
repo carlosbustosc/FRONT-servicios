@@ -10,9 +10,10 @@
 
     width: 150px;
     height: 150px;
-    background-image: url('../../../assets/img/foto_perfil2.jpg');
     background-size: 100%;
     border-radius: 10px;
+    background-size: cover;
+    background-position-x: -30px;
     
 }
 
@@ -20,8 +21,9 @@
     font-family: 'OpenSans-Regular';
     font-weight: 600;
     color: #0099a8;
-    margin-bottom: 0px;
-    margin-top: 28px;
+    margin-bottom: 20px;
+    font-size: 37px;
+
 }
 
 .nombre_persona2{
@@ -127,4 +129,32 @@
     left: -87px;
 }
 
+.total_servicio{
+
+    text-align: right;
+    padding: 0px 90px;
+}
+
+.txt_programe_servicios{
+
+    font-family: 'OpenSans-Regular';
+    font-weight: 500;
+    font-size: 19px;
+    margin-bottom: 36px;
+    font-weight: 600;
+    color: #0099a8;
+    text-align: center;
+}
+
+.bottom_select{
+
+    margin-bottom: 30px;
+}
+
+.categoria_servicio {
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: #009bb0;
+    font-size: 15px;
+}
 

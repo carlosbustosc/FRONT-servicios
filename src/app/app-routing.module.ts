@@ -25,7 +25,7 @@ const routes: Routes = [
   { path:"loginAdmin",      component:LoginAdminComponent},
   { path:"RegistrarTrabajador", component:RegistrarTrabajadorComponent },
   { path:"registrarCliente", component:RegistrarClienteComponent },
-  { path:"**", pathMatch:"full", redirectTo:"RegistrarTrabajador"}
+  { path:"**", pathMatch:"full", redirectTo:"inicio"}
 
 ];
 

@@ -161,3 +161,12 @@ select.form-control {
     max-width: 1000px;
     margin: 50px auto;
 }
+
+.estilos_informacion {
+    margin: 23px 0px 68px auto;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    background-color: #88d5dd;
+}

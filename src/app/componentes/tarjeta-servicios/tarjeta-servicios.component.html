@@ -1,28 +1,41 @@
 
 
     
-        <div class="row fondo_servicio">
+        <div class="row fondo_servicio" *ngFor="let servicios of serviciosTrabajador; let i = index">
             <div class="col-md-3 base_imagen">
-                <h3 class="titulo_servicio">Cambio de aceite</h3>
-                <div class="base_imagen_lts"></div>
+                <h3 class="titulo_servicio">{{ servicios.nombreServicio }}</h3>
+                <div class="base_imagen_lts" [ngStyle]="{ 'background-image' : 'url(https://www.eltiempo.com/infografias/2016/imagenes/servicios/'+ servicios.fotoServicio +')' }"></div>
             </div>
             <div class="col-md-4 padding_tarifas">
                 <h2 class="titulo_tarifas">Tarifas</h2>
-                <p class="txt_tarifas">Solo Servicio : <span class="precio_servicio">$50.000 COP</span> </p>
-                <p class="txt_tarifas">Solo Hora : <span class="precio_servicio">$20.000 COP</span> </p>
-                <p class="txt_tarifas">El dia completo :  <span class="precio_servicio">$20.000 COP</span> </p>
+                <p class="txt_tarifas">Solo Servicio : <span class="precio_servicio">${{ servicios.valorServicio }} COP</span> </p>
+                <p class="txt_tarifas">Solo Hora : <span class="precio_servicio">${{  servicios.valorHora }} COP</span> </p>
+                <p class="txt_tarifas">El dia completo :  <span class="precio_servicio">${{ servicios.valorDia }} COP</span> </p>
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-3">
+
                 <form>
                     <label class="txt_label">Seleccione tipo de servicio</label>
-                    <select class="form-control input_select">
-                        <option>Seleccione horario del servicio</option>
-                        <option></option>
+                    <select class="form-control input_select margin_select" #val>
+            
+                        <option [value]="servicios.valorServicio">Solo el Servicio</option>
+                        <option [value]="servicios.valorDia">Dia completo</option>
+                        <option [value]="servicios.valorHora">Solo 1 Hora</option>
+                        <option [value]="servicios.valorHora * 2">Solo 2 Horas</option>
+                        <option [value]="servicios.valorHora * 3">Solo 3 Horas</option>
+                        <option [value]="servicios.valorHora * 4">Solo 4 Horas</option>
+                        <option [value]="servicios.valorHora * 5">Solo 5 Horas</option>
+                        <option [value]="servicios.valorHora * 6">Solo 6 Horas</option>
+                        <option [value]="servicios.valorHora * 7">Solo 7 Horas</option>
                     </select>
 
-                    <button type="button" class="boton_servicio">Agregar Servicio</button>
+                    
+
+                    <button type="button" class="boton_servicio" (click)="tipoServicio( val.value, val.options[val.selectedIndex].text, serviciosTrabajador[i].nombreServicio )">Agregar Servicio</button>
                 </form>
+
+               
             </div>
         </div>
 

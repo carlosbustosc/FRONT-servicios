@@ -5,11 +5,13 @@
     <button class="boton_volver posicion_volver" (click)="volverPantalla()">Volver</button>
     <div class="row">
         <div class="col-md-2">
-            <div class="foto_perfil"></div>
+            <div class="foto_perfil" [ngStyle]="{ 'background-image' : 'url(https://www.eltiempo.com/infografias/2016/imagenes/trabajadores/' + Foto + ')' } "></div>
         </div>
         <div class="col-md-10">
-            <h1 class="nombre_persona">Camila Amaya</h1>
-            <p class="categoria_servicio">Catagoria Mecanica</p>
+            <h1 class="nombre_persona">{{ nombre }}</h1>
+            <p class="categoria_servicio">Catagoria {{ categoria }}</p>
+            <p class="categoria_servicio">Ciudad    {{ ciudad }}</p>
+            <p class="categoria_servicio">Telefono  {{ telefono }}</p>
         </div>
     </div>
 
@@ -20,8 +22,13 @@
     <div class="row">
         <h2 class="nombre_persona2">Servicios</h2>
 
-        <app-tarjeta-servicios></app-tarjeta-servicios>
-        <app-tarjeta-servicios></app-tarjeta-servicios>
+        <app-tarjeta-servicios 
+        [serviciosTrabajador]="serviciosDelTrabajador"
+        (tipoServicioSolicitado)="recibirTipoServicioSolicitado($event)"
+        
+        ></app-tarjeta-servicios>
+
+
     </div>
 
     <hr class="linea_divisora">
@@ -39,61 +46,90 @@
                 <h3 class="titulo_tabla">precio COP</h3>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <p class="nombre_servicio">Limpieza de cocina</p>
-                <p class="nombre_servicio">Limpieza de cocina</p>
 
-                <p class="nombre_servicio txt_bold">Total:</p>
+
+
+        <div class="row" *ngFor="let servicio of serviciosSeleccionados">
+            <div class="col-md-4 nombre_servicio">
+                <p class="nombre_servicio">{{ servicio.nombreServicio }}</p>
             </div>
-             <div class="col-md-4">
-                <p class="nombre_servicio">Servicio</p>
-                <p class="nombre_servicio">5 Horas</p>
+             <div class="col-md-4 intensidadServicio">
+                <p class="nombre_servicio">{{ servicio.texto }}</p>
+               
              </div>
-             <div class="col-md-4">
-                <p class="nombre_servicio">$ 50.000</p>
-                <p class="nombre_servicio">$ 50.000</p>
-
-                <p class="nombre_servicio txt_bold">$ 100.000</p>
+             <div class="col-md-4 precioServicio">
+                <p class="nombre_servicio">$ {{ servicio.value }}</p>
             </div>
+        </div>
+        <div class="row">
+             <p class="nombre_servicio txt_bold total_servicio" *ngIf="mostrarTotal">Total: $ {{ total }} COP</p>
         </div>
 
         <hr class="linea_divisora2">
         
-        <form>
+        <form [formGroup]="formularioAgendamiento">
             <div class="row caja_agendamiento">
-                <div class="col-md-4">
-                    <label class="txt_input">Seleccionar dia</label>
-                    <select class="form-control">
-                        <option>Seleccionar dia</option>
+            <p class="txt_programe_servicios">Programe su servicio</p>
+
+                <div class="col-md-4 bottom_select">
+                    <label class="txt_input">Seleccione departamento del servicio</label>
+                    <select class="form-control" #val (change)="cargarCiudades( val.value )" formControlName="departamento">
+                        <option [value]="i" *ngFor="let departamento of guardarTodasLosDepartamentos; let i = index">{{ departamento.departamento }}</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="ValidarDepartamento">Seleccione departamento</small>
                 </div>
-                <div class="col-md-4">
-                    <label class="txt_input">Seleccionar dia</label>
-                    <select class="form-control">
-                        <option>Seleccionar dia</option>
+
+                <div class="col-md-4 bottom_select">
+                    <label class="txt_input">Seleccione ciudad del servicio</label>
+                    <select class="form-control" formControlName="ciudad">
+                        <option [value]="ciudades"  *ngFor="let ciudades of guardarTodasLasCiudades; let i = index">{{ ciudades }}</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="ValidarCiudad">Seleccione ciudad</small>
+
                 </div>
-                <div class="col-md-4">
+
+                <div class="col-md-4 bottom_select">
+                    <label class="txt_input">Escriba el barrio</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="escriba el barrio" formControlName="barrio">
+
+                    <small class="text-danger" *ngIf="ValidarBarrio">Seleccione barrio</small>
+
+                    </div>
+                </div>
+
+                 <div class="col-md-4 bottom_select">
+                    <label class="txt_input">Escriba dirección</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="escriba la direccion del servicio" formControlName="direccion">
+                        <small class="text-danger" *ngIf="ValidarDireccion">Seleccione dirección</small>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 bottom_select">
+                    <label class="txt_input">Seleccionar dia</label>
+                    <div class="form-group">
+                        <input type="date" class="form-control" formControlName="dia">
+                        <small class="text-danger" *ngIf="ValidarDia">Seleccione dia</small>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 bottom_select">
                     <label class="txt_input">Seleccionar Hora</label>
-                    <select class="form-control">
-                        <option>Seleccionar Hora</option>
-                    </select>
+                    <div class="form-group">
+                        <input type="time" class="form-control" formControlName="hora">
+                        <small class="text-danger" *ngIf="ValidarHora">Seleccione hora</small>
+
+                    </div>
                 </div>
+                
+               
                 <div class="col-md-4">
-                    <label class="txt_input">Direccion del servicio</label>
-                    <select class="form-control">
-                        <option>Seleccionar Hora</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="txt_input">Direccion del servicio</label>
-                    <select class="form-control">
-                        <option>Seleccionar Hora</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <button class="boton_agendar">Agendar Servicio</button>
+                    <button type="button" class="boton_agendar" (click)="AgendarServicio()">Agendar Servicio</button>
                 </div>
             </div>
         </form>

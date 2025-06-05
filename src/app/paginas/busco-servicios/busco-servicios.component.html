@@ -41,7 +41,7 @@
         <!---formulario-->
         <form class="formulario_busqueda" [formGroup]="formularioBusqueda">
             <div class="form-group bajar_selects">
-                <label class="txt_label">Departamento de residencia</label>
+                <label class="txt_label">Seleccione departamento donde desea el domicilio</label>
                 <select class="form-control" #val (change)="valorDepartamento( val.value )" formControlName="departamento">
                     <option [value]="i" *ngFor="let depart of departamentos; let i  = index">{{ depart.departamento }}</option>
                 </select>
@@ -52,8 +52,8 @@
 
 
              <div class="form-group bajar_selects">
-                <label class="txt_label">Ciudad de residencia</label>
-                <select class="form-control" formControlName="ciudad">
+                <label class="txt_label">Seleccione ciudad donde desea el domicilio</label>
+                <select class="form-control" formControlName="ciudad" #val02 (change)="ciudadSeleccionada( val02.value )">
                     <option [value]="city" *ngFor="let city of ciudades">{{ city }}</option>
                 </select>
 
@@ -71,7 +71,7 @@
             </div>
 
             <div class="form-group bajar_selects">
-                <label class="txt_label">Eliga un</label>
+                <label class="txt_label">Eliga un oficio en concreto</label>
                 <select class="form-control" formControlName="subcategoria">
                     <option [value]="subcategoria" *ngFor="let subcategoria of subCategoriasUnicas">{{ subcategoria }}</option>
                 </select>
@@ -86,9 +86,19 @@
         </form>
 
         <hr class="linea_divisora">
-        <p class="descripcion_pagina">A continuacion podrás ver las personas en tu ciudad que realizan este trabajo, para conocer mas sobre el o ella, ver a su perfil.</p>
+        <p class="descripcion_pagina">A continuacion podrás ver las personas que realizan este trabajo, en la ciudad que elegiste,  para conocer mas sobre el o ella, visita sus servicios en "Ver servicios" y agenda el de tu preferencia.</p>
 
-        <div class="contenedor_de_resultados">
+        
+        <div class="row" *ngIf="ocultarError">
+            <div class="col">
+                <div class="alert alert-danger estilos_informacion" role="alert">
+                    No hay registros para su busqueda
+                </div>
+            </div>
+        </div>
+
+
+        <div class="contenedor_de_resultados" *ngIf="ocultarResultados">
 
             <!---
             <div class="row fondo_imagen_resultado">
@@ -104,7 +114,7 @@
 
             <div class="row">
                 <h2 class="titulo_resultado">Personas</h2>
-                <p class="texto_resultado">que ofrecen este servicio</p>
+                <p class="texto_resultado">que ofrecen este servicio en {{ guardarUnaCiudad }}</p>
             </div>
 
             <div class="row contenedor_busqueda">

@@ -14,8 +14,8 @@
     width: 167px;
     height: 150px;
     margin: auto;
-    background-image: url('../../../assets/img/foto_perfil.jpg');
     background-size: cover;    
+    background-position: center;
 }
 
 

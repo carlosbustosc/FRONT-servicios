@@ -1,7 +1,7 @@
 
 
     <h2 class="nombre_persona">{{ informacionPerfil.nombres }}</h2>
-    <div class="contenedor_foto_persona"></div>
+    <div class="contenedor_foto_persona" [ngStyle]="{ 'background-image': 'url(https://www.eltiempo.com/infografias/2016/imagenes/trabajadores/'+ informacionPerfil.fotoPersona +')' }"></div>
     <p class="txt_ver_perfil" (click)="verPerfil( informacionPerfil )">Ver perfil</p>
     <p class="ver_servicios"  (click)="verServicios( informacionPerfil )">Ver Servicios</p>
 

@@ -35,9 +35,13 @@ export class BuscoServiciosComponent implements OnInit{
 
   guardarTrabajadores:any[] = []
 
-
   perfilTrabajador:any = {}
+  
+  guardarUnaCiudad:any = "tu ciudad"
+  
 
+  ocultarResultados:boolean = false;
+  ocultarError:boolean = false;
 
   constructor( private fb:FormBuilder, private usarRuta: Router, private conectarServicios: ServiciosService){
   
@@ -81,7 +85,17 @@ export class BuscoServiciosComponent implements OnInit{
           })
   }
 
+
+
+  //ciudad seleccionada
+  ciudadSeleccionada( ciudad:string ){
+    
+    console.log(ciudad)
+    this.guardarUnaCiudad = ciudad
+  }
   
+
+
   //-----Validaciones visuales-------//
   get validarDepartamento(){
       
@@ -127,12 +141,25 @@ export class BuscoServiciosComponent implements OnInit{
           this.conectarServicios.buscarTrabajador( this.formularioBusqueda.value )
               .subscribe( (resp:any) => {
                 
-          
-    
                 this.guardarTrabajadores = resp.respTrabajador;
                 console.log(this.guardarTrabajadores)
+
+                this.ocultarResultados = true;
+                this.ocultarError = false;
               
-              })
+              }, ( error => {
+                
+                console.log("No hay coincidencia para su busqueda")
+
+                if(error.error.mensaje == "No hay coincidencia para su busqueda"){
+
+                this.ocultarResultados = false;
+                this.ocultarError = true;
+                
+
+                }
+
+              }))
 
       }
 
@@ -196,7 +223,9 @@ export class BuscoServiciosComponent implements OnInit{
     this.usarRuta.navigate(['/verServicios'], {
       
       queryParams:{
-        
+      
+       foto:   perfil.fotoPersona,
+       Nombre: perfil.nombres,
        Email: perfil.correoElectronico,
        categoria: perfil.categoria,
        subcategoria: perfil.subcategoria,

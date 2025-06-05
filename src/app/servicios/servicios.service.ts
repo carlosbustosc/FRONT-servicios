@@ -66,6 +66,35 @@ export class ServiciosService {
 
   }
 
+  
+  //traer servicios trabajador
+  serviciosTrabajador( correo:string, categoria:string ){
+    
+    return this.usarHttp.get(`http://localhost:5000/obtenerServiciosTrabajador/${ correo }/${ categoria }`)
+
+  }
+
+
+  ///agendar servicio de trabajador
+  agendarServicioDeUnTrabajador( datosServicios:any, datosFormulario:any ){
+
+      const datosServicio = {
+
+        departamento:  datosFormulario.departamento,
+        ciudad:        datosFormulario.ciudad,
+        barrio:        datosFormulario.barrio,
+        direccion:     datosFormulario.direccion,
+        dia:           datosFormulario.dia,    
+        hora:          datosFormulario.hora,
+        servicios:     datosServicios
+
+      }
+
+      console.log(datosServicio)
+
+      return this.usarHttp.get('')
+
+  }
 
 }
 

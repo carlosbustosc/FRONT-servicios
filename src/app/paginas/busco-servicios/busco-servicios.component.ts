@@ -224,13 +224,15 @@ export class BuscoServiciosComponent implements OnInit{
       
       queryParams:{
       
-       foto:   perfil.fotoPersona,
-       Nombre: perfil.nombres,
-       Email: perfil.correoElectronico,
-       categoria: perfil.categoria,
+       departamentoServicio: this.formularioBusqueda.value.departamento,
+       ciudadServicio : this.formularioBusqueda.value.ciudad,
+       foto:         perfil.fotoPersona,
+       Nombre:       perfil.nombres,
+       Email:        perfil.correoElectronico,
+       categoria:    perfil.categoria,
        subcategoria: perfil.subcategoria,
-       telefono: perfil.telefono,
-       ciudad: perfil.ciudad
+       telefono:     perfil.telefono,
+       ciudad:       perfil.ciudad
 
       }
     })

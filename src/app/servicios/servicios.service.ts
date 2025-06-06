@@ -95,6 +95,96 @@ export class ServiciosService {
       return this.usarHttp.get('')
 
   }
+    
+
+  //registrarCliente
+  registrarCliente( formulario:any ){
+    
+    const datosCliente = {
+
+                nombreCompleto:       formulario.nombre,   
+                genero:               formulario.genero,   
+                documento:            formulario.documento,  
+                edad:                 formulario.edad,  
+                fotoPerfil:           formulario.fotoPerfil,  
+                telefono:             formulario.telefono , 
+                email:                formulario.email,  
+                password:             formulario.pass,  
+                departamento:         formulario.departamento,
+                ciudad:               formulario.ciudad, 
+                direccion:            formulario.direccion, 
+                archivoAntecedentes:  formulario.antecedentes,
+                rol: "cliente"
+
+    }
+
+    console.log(datosCliente)
+
+    return this.usarHttp.post('http://localhost:5000/registrarCliente', datosCliente)
+
+  }
+
+
+  //login cliente
+  loginClientes( email:string, pass:string){
+  
+    const datosCliente = {
+
+      usuario: email,
+      contrasena : pass
+    }
+      
+    return this.usarHttp.post('http://localhost:5000/loginCliente', datosCliente)
+  
+  }
+  
+
+  
+  //login trabajador
+  loginTrabajador( email:string, pass: string){
+      
+    const datosTrabajador = {
+      
+      usuario: email,
+      contrasena:pass
+    }
+
+
+    return this.usarHttp.post('http://localhost:5000/loginTrabajador', datosTrabajador)
+
+  }
+
+  //registrar trabajador
+  RegistrarTrabajador( datosFormulario:any ){
+      
+    const datosTrabajador = {
+
+  
+          nombres:         datosFormulario.nombre,       
+          edad:            datosFormulario.edad,        
+          documento:       datosFormulario.documento,   
+          genero:          datosFormulario.genero,       
+          departamento:    datosFormulario.departamento ,
+          ciudad:          datosFormulario.ciudad ,      
+          tipoSangre:      datosFormulario.tipoSangre,   
+          fotoPersona:     datosFormulario.fotoPersona,  
+          documentoHV:     datosFormulario.HV,           
+          documentoAntecedentes: datosFormulario.antecedentes, 
+          telefono:              datosFormulario.telefono,     
+          correoElectronico:     datosFormulario.email,        
+          contrasena:            datosFormulario.pass,        
+          eps:                   datosFormulario.EPS,          
+          contactoDeEmergencia:  datosFormulario.telEmergencia,
+          categoria:    datosFormulario.categoria,
+          subcategoria: datosFormulario.subcategoria
+      
+      }
+
+      console.log(datosTrabajador)
+
+      return this.usarHttp.post('http://localhost:5000/registroTrabajador', datosTrabajador);
+
+  }
 
 }
 

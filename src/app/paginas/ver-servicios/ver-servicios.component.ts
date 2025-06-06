@@ -23,6 +23,9 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms"
 })
 export class VerServiciosComponent implements OnInit {
   
+
+  departamentoServicio:string = ""
+  ciudadServicio:string = ""
   Foto:string = ""
   nombre:string = ""
   correo:string = ""; 
@@ -52,31 +55,14 @@ export class VerServiciosComponent implements OnInit {
 
 
 
-  constructor( private volverPantallaAnterior: Location, 
-               private recibirPrametro: ActivatedRoute, 
-               private conectarServicios:ServiciosService, 
-               private fb: FormBuilder){
+  constructor( private volverPantallaAnterior: Location, private recibirPrametro: ActivatedRoute, private conectarServicios:ServiciosService, private fb: FormBuilder){
 
-      
-        this.formularioAgendamiento = this.fb.group({
-
-            departamento: ["",  Validators.required],
-            ciudad:       ["",  Validators.required],
-            barrio:       ["",  Validators.required],
-            direccion:    ["",  Validators.required],
-            dia:          ["",  Validators.required],
-            hora:         ["",  Validators.required]
-
-
-        })
-
-  }
-
-  ngOnInit(): void {
-    
+        
     this.recibirPrametro.queryParams
       .subscribe( resp => {
           
+          this.departamentoServicio = resp['departamentoServicio'],
+          this.ciudadServicio       = resp['ciudadServicio']
           this.Foto         = resp['foto'];
           this.nombre       = resp['Nombre']
           this.correo       = resp['Email'];
@@ -85,10 +71,29 @@ export class VerServiciosComponent implements OnInit {
           this.telefono     = resp['telefono']
           this.ciudad       = resp['ciudad']
 
-
+          console.log(this.departamentoServicio)
+          console.log(this.ciudadServicio)
       })
 
 
+        this.formularioAgendamiento = this.fb.group({
+
+            departamento: [ this.departamentoServicio,  Validators.required],
+            ciudad:       [ this.ciudadServicio,  Validators.required],
+            barrio:       ["",  Validators.required],
+            direccion:    ["",  Validators.required],
+            dia:          ["",  Validators.required],
+            hora:         ["",  Validators.required]
+
+
+        })
+
+
+  }
+
+  ngOnInit(): void {
+    
+      
       //traer los servicos que ofrece el trabajdor
       this.conectarServicios.serviciosTrabajador(  this.correo, this.categoria  )
           .subscribe( (resp:any) => {
@@ -108,8 +113,9 @@ export class VerServiciosComponent implements OnInit {
             
 
           })
-
-
+        
+          
+          
   }
   
     
@@ -193,7 +199,7 @@ export class VerServiciosComponent implements OnInit {
   
 
     this.guardarTodasLasCiudades = this.guardarTodasLosDepartamentos[posicionDepartamento].ciudades;
-    //console.log( this.guardarTodasLasCiudades )
+    console.log( this.guardarTodasLasCiudades )
   
   }
 

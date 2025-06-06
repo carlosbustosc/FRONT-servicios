@@ -2,77 +2,113 @@
 
 
 <div class="contenedor_registros">
+    
+    
     <!--<div _ngcontent-ckj-c7="" class="mascara_encima"></div>-->
-    <form class="formulario_registro">
+    <form [formGroup]="registroClientes" class="formulario_registro">
         <button type="button" class="boton_volver mover_boton" (click)="volverPantalla()">Volver</button>
         <div class="row">
             <h1 class="titulo_login">Registro <span class="txt_impac">Cliente</span></h1>
             <div class="col-md-6 padding_columna">
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Nombre Completo</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su nombre completo"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su nombre completo" formControlName="nombre"/>
+
+                    <small class="text-danger" *ngIf="ValidarNombre">debe llenar el campo nombre</small>
                 </div>
 
                  <div class="form-group">
                     <label class="texto_input txt_cliente">genero</label>
-                    <select class="form-control borde_formulario">
+                    <select class="form-control borde_formulario" formControlName="genero">
                         <option class="opciones">Seleccione el genero</option>
                         <option value="hombre" class="opciones">Hombre</option>
                         <option value="mujer" class="opciones">Mujer</option>
                     </select>
+                    <small class="text-danger" *ngIf="ValidarGenero">debe llenar el campo genero</small>
+
                 </div>
 
                  <div class="form-group">
                     <label class="texto_input txt_cliente">Documento</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su numero de documento"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su numero de documento" formControlName="documento"/>
+                    <small class="text-danger" *ngIf="ValidarDocumento">debe llenar el campo Documento</small>
+
+
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Edad</label>
-                    <select class="form-control contenedor_edad borde_formulario">
+                    <select class="form-control contenedor_edad borde_formulario" formControlName="edad">
                         <option>Seleccione edad</option>
                         <option *ngFor="let edad of edades" [value]="edad">{{ edad }}</option>
                     </select>
+                    <small class="text-danger" *ngIf="ValidarEdad">debe llenar el campo edad</small>
+
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Foto de perfil</label>
-                    <input type="file" class="form-control  borde_formulario"/>
+                    <input type="file" class="form-control  borde_formulario" formControlName="fotoPerfil"/>
+
+                    <small class="text-danger" *ngIf="ValidarFotoPerfil">debe llenar el campo perfil</small>
+
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Telefono</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su telefono"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su telefono" formControlName="telefono"/>
+
+                    <small class="text-danger" *ngIf="ValidarTelefono">debe llenar el campo telefono</small>
+
                 </div>
             </div>
             <div class="col-md-6 padding_columna">
                  <div class="form-group">
                     <label class="texto_input txt_cliente">email</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su email"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su email" formControlName="email"/>
+
+                    <small class="text-danger" *ngIf="ValidarEmail">debe llenar el campo email</small>
+
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">password</label>
-                    <input type="password" class="form-control  borde_formulario" placeholder="Escriba su contraseña"/>
+                    <input type="password" class="form-control  borde_formulario" placeholder="Escriba su contraseña" formControlName="pass"/>
+
+                    <small class="text-danger" *ngIf="ValidarPass">debe llenar el campo password</small>
+
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">departamento</label>
-                    <select class="form-control  borde_formulario">
-                        <option>Seleccione su departamento</option>
+                    <select class="form-control  borde_formulario" #val01 (change)="obtenerCiudades( val01.value )" formControlName="departamento">
+                        <option [value]="i" *ngFor="let departamentos of guardarTodosLosDepartamentos; let i = index">{{ departamentos.departamento }}</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="ValidarDepartamento">debe llenar el campo departamento</small>
+
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">ciudad</label>
-                    <select class="form-control  borde_formulario">
-                        <option>Seleccione su ciudad</option>
+                    <select class="form-control  borde_formulario" formControlName="ciudad">
+                        <option [value]="ciudad" *ngFor="let ciudad of guardarTodasCiudades">{{ ciudad }}</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="ValidarCiudad">debe llenar el campo ciudad</small>
+
+
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Dirección</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escribe tu direccion de residencia"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escribe tu direccion de residencia" formControlName="direccion"/>
+
+                    <small class="text-danger" *ngIf="ValidarDireccion">debe llenar el campo direccion</small>
+
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">archivo Antecedentes</label>
-                    <input type="file" class="form-control  borde_formulario"/>
+                    <input type="file" class="form-control  borde_formulario" formControlName="antecedentes"/>
+
+                    <small class="text-danger" *ngIf="ValidarAntecedentes">debe llenar el campo antecedentes</small>
+
                 </div>
                 <div class="form-group">
-                   <button class="registro">Registrarse</button>
+                   <button type="button" class="registro" (click)="registrarCliente()">Registrarse</button>
                 </div>
             </div>
         </div>

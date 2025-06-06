@@ -9,21 +9,25 @@
 
         
         
-        <form>
+        <form [formGroup]="datosLogin">
             <h1 class="titulo_login">Login <span class="txt_impac">{{ usuarioHijo }}</span></h1>
            
             <div class="form-group">
                 <label class="texto_input">Usuario</label>
-                <input type="text" class="form-control input_login borde_formulario"/>
+                <input type="text" class="form-control input_login borde_formulario" formControlName="email"/>
+
+                <small class="text-danger" *ngIf="validarEmail">Falta el campo email</small>
             </div>
 
             <div class="form-group">
                 <label class="texto_input">Contraseña</label>
-                <input type="text" class="form-control input_login borde_formulario"/>
+                <input type="text" class="form-control input_login borde_formulario" formControlName="pass"/>
+
+                <small class="text-danger" *ngIf="validarPass">Falta el campo password</small>
             </div>
 
             <div class="form-group">
-            <button type="button" class="estilo_botones ubicacion_boton">Ingresar</button>
+            <button type="button" class="estilo_botones ubicacion_boton" (click)="enviaDatosLogin()">Ingresar</button>
             </div>
         </form>
     </div>

@@ -3,111 +3,164 @@
 
 <div class="contenedor_registros">
     <!--<div _ngcontent-ckj-c7="" class="mascara_encima"></div>-->
-    <form class="formulario_registro">
+    <form [formGroup]="formRegistrarTrabajador" class="formulario_registro">
         <button type="button" class="boton_volver mover_boton" (click)="volverPantalla()">Volver</button>
         <div class="row">
             <h1 class="titulo_login">Registro <span class="txt_impac">Trabajador</span></h1>
             <div class="col-md-6 padding_columna">
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Nombre Completo</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su nombre completo"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su nombre completo" formControlName="nombre"/>
+
+                    <small class="text-danger" *ngIf="nombreValidarCampo">debe diligenciar este campo</small>
                 </div>
 
                  <div class="form-group">
                     <label class="texto_input txt_cliente">Edad</label>
-                    <select class="form-control contenedor_edad borde_formulario">
+                    <select class="form-control contenedor_edad borde_formulario" formControlName="edad">
                         <option>Seleccione edad</option>
                         <option *ngFor="let edad of edades" [value]="edad">{{ edad }}</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="edadValidarCampo">debe diligenciar este campo</small>
+
                 </div>
 
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Documento</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su numero de documento"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su numero de documento" formControlName="documento"/>
+
+                    <small class="text-danger" *ngIf="documentoValidarCampo">debe diligenciar este campo</small>
                 </div>
 
                  <div class="form-group">
                     <label class="texto_input txt_cliente">genero</label>
-                    <select class="form-control borde_formulario">
+                    <select class="form-control borde_formulario" formControlName="genero">
                         <option class="opciones">Seleccione el genero</option>
                         <option value="hombre" class="opciones">Hombre</option>
                         <option value="mujer" class="opciones">Mujer</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="generoValidarCampo">debe diligenciar este campo</small>
                 </div>
 
                 <div class="form-group">
                     <label class="texto_input txt_cliente">departamento</label>
-                    <select class="form-control  borde_formulario">
+                    <select class="form-control  borde_formulario" formControlName="departamento">
                         <option>Seleccione su departamento</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="departamentoValidarCampo">debe diligenciar este campo</small>
                 </div>
+
                 <div class="form-group">
                     <label class="texto_input txt_cliente">ciudad</label>
-                    <select class="form-control  borde_formulario">
+                    <select class="form-control  borde_formulario" formControlName="ciudad">
                         <option>Seleccione su ciudad</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="ciudadValidarCampo">debe diligenciar este campo</small>
                 </div>
 
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Tipo de sangre</label>
-                    <select class="form-control  borde_formulario">
+                    <select class="form-control  borde_formulario" formControlName="tipoSangre">
                         <option>Seleccione su ciudad</option>
-                        <option>O+</option>
-                        <option>O-</option>
-                        <option>A+</option>
-                        <option>A-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
                     </select>
+
+                    <small class="text-danger" *ngIf="tipoSangreValidarCampo">debe diligenciar este campo</small>
                 </div>
+
 
               
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Foto de persona</label>
-                    <input type="file" class="form-control  borde_formulario"/>
+                    <input type="file" class="form-control  borde_formulario" formControlName="fotoPersona"/>
+
+                    <small class="text-danger" *ngIf="fotoPersonaValidarCampo">debe diligenciar este campo</small>
                 </div>
 
 
              </div>
                 
             <div class="col-md-6 padding_columna">
-                 
                 <div class="form-group">
                     <label class="texto_input txt_cliente">documento HV</label>
-                    <input type="file" class="form-control  borde_formulario"/>
+                    <input type="file" class="form-control  borde_formulario" formControlName="HV"/>
+
+                    <small class="text-danger" *ngIf="HVValidarCampo">debe diligenciar este campo</small>
                 </div>
 
 
                 <div class="form-group">
                     <label class="texto_input txt_cliente">documento Antecedentes</label>
-                    <input type="file" class="form-control  borde_formulario"/>
+                    <input type="file" class="form-control  borde_formulario" formControlName="antecedentes"/>
+
+                    <small class="text-danger" *ngIf="antecedentesValidarCampo">debe diligenciar este campo</small>
                 </div>
 
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Telefono</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su telefono"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su telefono" formControlName="telefono"/>
+
+                    <small class="text-danger" *ngIf="telefonoValidarCampo">debe diligenciar este campo</small>
                 </div>
            
 
                  <div class="form-group">
                     <label class="texto_input txt_cliente">email</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su email"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escriba su email" formControlName="email"/>
+
+                    <small class="text-danger" *ngIf="emailValidarCampo">debe diligenciar este campo</small>
                 </div>
+
                 <div class="form-group">
                     <label class="texto_input txt_cliente">password</label>
-                    <input type="password" class="form-control  borde_formulario" placeholder="Escriba su contraseña"/>
+                    <input type="password" class="form-control  borde_formulario" placeholder="Escriba su contraseña" formControlName="pass"/>
+
+                    <small class="text-danger" *ngIf="passValidarCampo">debe diligenciar este campo</small>
                 </div>
 
                  <div class="form-group">
                     <label class="texto_input txt_cliente">certificado EPS</label>
-                    <input type="file" class="form-control  borde_formulario"/>
+                    <input type="file" class="form-control  borde_formulario" formControlName="EPS"/>
+
+                    <small class="text-danger" *ngIf="EPSValidarCampo">debe diligenciar este campo</small>
                 </div>
                 
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Contacto de emergencia</label>
-                    <input type="text" class="form-control  borde_formulario" placeholder="Escribe tu direccion de residencia"/>
+                    <input type="text" class="form-control  borde_formulario" placeholder="Escribe tu direccion de residencia" formControlName="telEmergencia"/>
+
+                    <small class="text-danger" *ngIf="telEmergenciaValidarCampo">debe diligenciar este campo</small>
                 </div>
-               
+
                 <div class="form-group">
-                   <button class="registro">Registrarse</button>
+                    <label class="texto_input txt_cliente">Tipo servicio</label>
+                    <select class="form-control  borde_formulario" formControlName="categoria">
+                        <option>Seleccione su ciudad</option>
+                        
+                    </select>
+
+                    <small class="text-danger" *ngIf="ValidarCategoria">debe diligenciar este campo</small>
+                </div>
+
+                 <div class="form-group">
+                    <label class="texto_input txt_cliente">Tipo sub - servicio</label>
+                    <select class="form-control  borde_formulario" formControlName="subcategoria">
+                        <option>Seleccione su ciudad</option>
+                        
+                    </select>
+
+                    <small class="text-danger" *ngIf="ValidarSubcategoria">debe diligenciar este campo</small>
+                </div>
+
+                <div class="form-group">
+                   <button type="button" class="registro" (click)="registrarTrabajador()">Registrarse</button>
                 </div>
             </div>
         </div>

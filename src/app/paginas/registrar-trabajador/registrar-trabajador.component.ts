@@ -20,6 +20,14 @@ export class RegistrarTrabajadorComponent implements OnInit {
 
   formRegistrarTrabajador:FormGroup
 
+
+  fotoPersona:any
+  hojaVidaCampo:any
+  campoAntecedentes:any
+  campoEPS:any
+
+
+
   constructor( private volver:Location, private fb:FormBuilder, private conectarServicios:ServiciosService ){
     
     this.formRegistrarTrabajador = this.fb.group({
@@ -31,13 +39,13 @@ export class RegistrarTrabajadorComponent implements OnInit {
       departamento:  ["", Validators.required ],
       ciudad:        ["", Validators.required ],
       tipoSangre:    ["", Validators.required ],
-      fotoPersona:   ["", Validators.required ],
+     
       HV:            ["", Validators.required ],
-      antecedentes:  ["", Validators.required ],
+     
       telefono:      ["", Validators.required ],
       email:         ["", Validators.required ],
       pass:          ["", Validators.required ],
-      EPS:           ["", Validators.required ],
+     
       telEmergencia: ["", Validators.required ],
       categoria:     ["", Validators.required ],
       subcategoria:     ["", Validators.required ]
@@ -71,15 +79,9 @@ export class RegistrarTrabajadorComponent implements OnInit {
       get tipoSangreValidarCampo(){
         return this.formRegistrarTrabajador.controls['tipoSangre'].invalid && this.formRegistrarTrabajador.controls['tipoSangre'].touched
       }
-      get fotoPersonaValidarCampo(){
-        return this.formRegistrarTrabajador.controls['fotoPersona'].invalid && this.formRegistrarTrabajador.controls['fotoPersona'].touched
-      }
-      get HVValidarCampo(){
-        return this.formRegistrarTrabajador.controls['HV'].invalid && this.formRegistrarTrabajador.controls['HV'].touched
-      }
-      get antecedentesValidarCampo(){
-        return this.formRegistrarTrabajador.controls['antecedentes'].invalid && this.formRegistrarTrabajador.controls['antecedentes'].touched
-      }
+     
+    
+     
       get telefonoValidarCampo(){
         return this.formRegistrarTrabajador.controls['telefono'].invalid && this.formRegistrarTrabajador.controls['telefono'].touched
       }
@@ -112,6 +114,52 @@ export class RegistrarTrabajadorComponent implements OnInit {
      this.edades = Array.from( { length:100 }, ( _, i ) => i );
   }
   
+    
+  
+
+
+
+
+
+
+
+
+  fotoPersonaCampo( event:any ){
+  
+    event.target.files[0];
+    
+    this.fotoPersona = event.target.files[0];
+  }
+
+
+  HvCampo( event:any ){
+    
+    event.target.files[0]
+
+    this.hojaVidaCampo = event.target.files[0]
+
+  }
+
+  antecedentesCampo( event:any ){
+  
+    event.target.files[0]
+
+    this.campoAntecedentes = event.target.files[0]
+  }
+
+  
+  epsCampo( event:any ){
+    
+    event.target.files[0]
+
+    this.campoEPS = event.target.files[0]
+
+  }
+
+
+
+
+
 
 
   registrarTrabajador(){
@@ -126,7 +174,7 @@ export class RegistrarTrabajadorComponent implements OnInit {
 
     }else{
 
-      this.conectarServicios.RegistrarTrabajador( this.formRegistrarTrabajador.value )
+      this.conectarServicios.RegistrarTrabajador( this.formRegistrarTrabajador.value, this.fotoPersona, this.hojaVidaCampo, this.campoAntecedentes, this.campoEPS )
 
     }
 

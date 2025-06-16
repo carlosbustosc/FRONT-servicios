@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">Foto de perfil</label>
-                    <input type="file" class="form-control  borde_formulario" formControlName="fotoPerfil"/>
+                    <input type="file" class="form-control  borde_formulario" (change)="fotoPerfilCampo($event)"/>
 
                     <small class="text-danger" *ngIf="ValidarFotoPerfil">debe llenar el campo perfil</small>
 
@@ -102,7 +102,7 @@
                 </div>
                 <div class="form-group">
                     <label class="texto_input txt_cliente">archivo Antecedentes</label>
-                    <input type="file" class="form-control  borde_formulario" formControlName="antecedentes"/>
+                    <input type="file" class="form-control  borde_formulario" (change)="antecedentesCampo($event)"/>
 
                     <small class="text-danger" *ngIf="ValidarAntecedentes">debe llenar el campo antecedentes</small>
 

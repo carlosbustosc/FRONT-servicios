@@ -1,0 +1,114 @@
+<app-navbar [ocultarMenuHijo]="ocultarMenu"></app-navbar>
+
+
+<div class="container baseAncho">
+    <div class="row">
+        <div class="col-md-12 contenedor_ltsx">
+            <h2 class="titulo_persona">Personas que aceptaron tu solicitud</h2>
+            
+            <p class="txt_intro">De click en cada tarjeta para ver el servicio que desean contratar</p>
+
+
+            <div class="contenido_tarjeta">
+                <h2 class="nombre_trabajador">Alejandro pedraza</h2>
+                <p class="nombre_servicio">Limpieza hogar</p>
+                <p class="solicitud_aceptada">Nueva solicitud</p>
+            </div>
+
+            <div class="contenido_tarjeta">
+                <h2 class="nombre_trabajador">Alejandro pedraza</h2>
+                <p class="nombre_servicio">Limpieza hogar</p>
+                <p class="solicitud_aceptada">Nueva solicitud</p>
+            </div>
+        </div>
+
+        <div class="col-md-12 contenedor_detalle_servicio">
+
+            <h2 class="servicio_name">Servicio del cliente Carlos bustos</h2>
+            <div class="contenedor_detalle">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="titulo_detalle">Tipo de servicio</h2>
+                        <p  class="txt_detalle">Aseo sala comedor</p>
+                    </div>
+
+                     <div class="col-md-4">
+                        <h2 class="titulo_detalle">Fracción</h2>
+                        <p  class="txt_detalle">Dia completo</p>
+                    </div>
+
+                     <div class="col-md-4">
+                        <h2 class="titulo_detalle">precio COP</h2>
+                        <p  class="txt_detalle">$ 65000</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="titulo_detalle">Departamento</h2>
+                        <p  class="txt_detalle">Cundinamarca</p>
+                    </div>
+
+                     <div class="col-md-4">
+                        <h2 class="titulo_detalle">Ciudad</h2>
+                        <p  class="txt_detalle">Bogota</p>
+                    </div>
+
+                     <div class="col-md-4">
+                        <h2 class="titulo_detalle">Barrio</h2>
+                        <p  class="txt_detalle">Perdomo</p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="titulo_detalle">Dirección</h2>
+                        <p  class="txt_detalle">KR 70D # sur 38</p>
+                    </div>
+
+                     <div class="col-md-4">
+                        <h2 class="titulo_detalle">Dia</h2>
+                        <p  class="txt_detalle">10/03/2024</p>
+                    </div>
+
+                     <div class="col-md-4">
+                        <h2 class="titulo_detalle">Hora</h2>
+                        <p  class="txt_detalle">2:30 pm</p>
+                    </div>
+                </div>
+
+                <div class="row seccion_botones">
+
+                    <div class="col-md-3">
+                        <button _ngcontent-urg-c13="" type="button" class="boton_reAgendar">Aceptar trabajo</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button _ngcontent-urg-c13="" type="button" class="boton_cancelar_servicio">No aceptar</button>
+                    </div>
+
+                </div>
+
+                <hr class="line_divisora">
+
+            
+
+                <div class="seccion_mensajes">
+                    <h2 class="servicio_name">Mensajes del cliente</h2>
+                    <div class="globo_mensajes">
+                        <h3 class="nombre_trabajador">Alejandro pedraza</h3>
+                        <p class="txt_Mensaje">He recibido satisfactoriamente el agendamiento muchas gracias.</p>
+                        <button type="button" class="boton_reAgendar_lt" (click)="responderMensaje()" *ngIf="mostrarBtnResponder">Responder mensaje</button>
+                    </div>
+                    
+                    <textarea class="textArea form-control" *ngIf="mostrarCampoMensaje"></textarea>
+                    <button  type="button" class="boton_reAgendar_lt" *ngIf="mostrarCampoMensaje">Enviar mensaje</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

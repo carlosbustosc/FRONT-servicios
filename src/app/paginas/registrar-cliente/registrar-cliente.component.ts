@@ -28,7 +28,16 @@ export class RegistrarClienteComponent implements OnInit {
 
   //form
   registroClientes:FormGroup
+
+
+  fotoPerfil:any
+  antecedente:any
   
+
+  ValidarFotoPerfil:boolean = false
+  ValidarAntecedentes:boolean = false
+
+
   constructor( private volver:Location, private conectarServicios:ServiciosService, private fb:FormBuilder ){
     
       this.registroClientes = this.fb.group({
@@ -37,14 +46,14 @@ export class RegistrarClienteComponent implements OnInit {
           genero:       ["", Validators.required ],
           documento:    ["", Validators.required ],
           edad:         ["", Validators.required ],
-          fotoPerfil:   ["", Validators.required ],
+        
           telefono:     ["", Validators.required ],
           email:        ["", Validators.required ],
           pass:         ["", Validators.required ],
           departamento: ["", Validators.required ],
           ciudad:       ["", Validators.required ],
           direccion:    ["", Validators.required ],
-          antecedentes: ["", Validators.required ]
+         
 
       })
     
@@ -91,11 +100,7 @@ export class RegistrarClienteComponent implements OnInit {
 
           }   
 
-          get ValidarFotoPerfil(){
-              
-            return this.registroClientes.controls['fotoPerfil'].invalid && this.registroClientes.controls['fotoPerfil'].touched;
-
-          } 
+        
 
           get ValidarTelefono(){
               
@@ -133,11 +138,7 @@ export class RegistrarClienteComponent implements OnInit {
 
           }  
 
-          get ValidarAntecedentes(){
-            
-            return this.registroClientes.controls['antecedentes'].invalid && this.registroClientes.controls['antecedentes'].touched;
-
-          }      
+             
 
   
 
@@ -150,6 +151,31 @@ export class RegistrarClienteComponent implements OnInit {
 
 
 
+
+
+
+  //traer informacion de archivos//
+  fotoPerfilCampo( evento:any ){
+
+    console.log( evento.target.files[0] )
+    
+    this.ValidarFotoPerfil = evento.target.files[0];
+
+  }
+
+  antecedentesCampo( evento:any ){
+
+    this.ValidarAntecedentes = evento.target.files[0]
+
+  }
+  //Fin informacion de archivos//
+
+
+
+
+
+
+  
   registrarCliente(){  
       
 
@@ -163,7 +189,7 @@ export class RegistrarClienteComponent implements OnInit {
     
     }else{
 
-      this.conectarServicios.registrarCliente( this.registroClientes.value )
+      this.conectarServicios.registrarCliente( this.registroClientes.value, this.ValidarFotoPerfil,  this.ValidarAntecedentes )
         .subscribe( resp => {
 
           console.log(resp)

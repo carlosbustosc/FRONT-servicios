@@ -12,8 +12,11 @@ import { ActivatedRoute } from '@angular/router'
 //conectar servicios
 import { ServiciosService } from 'src/app/servicios/servicios.service';
 
-//taer formGroup
+
+
+//traer formGroup
 import { FormGroup, FormBuilder, Validators } from "@angular/forms"
+
 
 
 @Component({
@@ -24,8 +27,8 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms"
 export class VerServiciosComponent implements OnInit {
   
 
-  departamentoServicio:string = ""
-  ciudadServicio:string = ""
+  departamentoServicio:number = 0
+  ciudadServicio:any = ""
   Foto:string = ""
   nombre:string = ""
   correo:string = ""; 
@@ -63,13 +66,13 @@ export class VerServiciosComponent implements OnInit {
           
           this.departamentoServicio = resp['departamentoServicio'],
           this.ciudadServicio       = resp['ciudadServicio']
-          this.Foto         = resp['foto'];
-          this.nombre       = resp['Nombre']
-          this.correo       = resp['Email'];
-          this.categoria    = resp['categoria']
-          this.subcategoria = resp['subcategoria']
-          this.telefono     = resp['telefono']
-          this.ciudad       = resp['ciudad']
+          this.Foto                 = resp['foto'];
+          this.nombre               = resp['Nombre']
+          this.correo               = resp['Email'];
+          this.categoria            = resp['categoria']
+          this.subcategoria         = resp['subcategoria']
+          this.telefono             = resp['telefono']
+          this.ciudad               = resp['ciudad']
 
           console.log(this.departamentoServicio)
           console.log(this.ciudadServicio)
@@ -110,10 +113,14 @@ export class VerServiciosComponent implements OnInit {
           .subscribe( (resp:any) => {
 
             this.guardarTodasLosDepartamentos = resp;
-            
+              
+
+            this.guardarTodasLasCiudades = this.guardarTodasLosDepartamentos[ this.departamentoServicio ].ciudades;
 
           })
-        
+          
+
+       
           
           
   }
@@ -226,8 +233,8 @@ export class VerServiciosComponent implements OnInit {
         })
 
     }else{
-
         
+
         this.conectarServicios.agendarServicioDeUnTrabajador( this.serviciosSeleccionados, this.formularioAgendamiento)
             .subscribe( (resp:any) => {
 

@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http'
 
 //importar modulo formularios reactivos
 import { ReactiveFormsModule } from '@angular/forms';
+import { InternaClienteComponent } from './paginas/interna-cliente/interna-cliente.component';
+import { InternaTrabajadorComponent } from './paginas/interna-trabajador/interna-trabajador.component';
 
 
 
@@ -40,7 +42,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginTrabajadorComponent,
     LoginAdminComponent,
     RegistrarTrabajadorComponent,
-    RegistrarClienteComponent
+    RegistrarClienteComponent,
+     InternaClienteComponent,
+     InternaTrabajadorComponent
 
   ],
   imports: [

@@ -11,6 +11,8 @@ import { LoginTrabajadorComponent } from './paginas/login-trabajador/login-traba
 import { LoginAdminComponent } from './paginas/login-admin/login-admin.component';
 import { RegistrarTrabajadorComponent } from './paginas/registrar-trabajador/registrar-trabajador.component';
 import { RegistrarClienteComponent } from './paginas/registrar-cliente/registrar-cliente.component';
+import { InternaClienteComponent } from './paginas/interna-cliente/interna-cliente.component';
+import { InternaTrabajadorComponent } from './paginas/interna-trabajador/interna-trabajador.component';
 
 
 
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path:"loginAdmin",      component:LoginAdminComponent},
   { path:"RegistrarTrabajador", component:RegistrarTrabajadorComponent },
   { path:"registrarCliente", component:RegistrarClienteComponent },
+  { path:"internaCliente", component: InternaClienteComponent },
+  { path:"internaTrabajador", component:InternaTrabajadorComponent },
   { path:"**", pathMatch:"full", redirectTo:"inicio"}
 
 ];

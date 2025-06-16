@@ -1,0 +1,185 @@
+
+
+.contenido_tarjeta {
+    width: 90%;
+    display: table;
+    background-color: #fff;
+    /* border: 1px solid #00abcd; */
+    padding: 16px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 24px;
+    margin: 0px auto 24px auto;
+}
+
+
+.contenedor_ltsx{
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #1fc6d730;
+}
+
+.nombre_trabajador {
+    font-family: 'OpenSans-Regular';
+    font-size: 24px;
+    margin-bottom: 1px;
+    font-weight: 500;
+    color: #0099a8;
+}
+
+.nombre_servicio {
+    font-family: 'OpenSans-Regular';
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.titulo_persona {
+    margin-top: 82px;
+    font-size: 17px;
+    margin-bottom: 30px;
+    color: #00abcd;
+    text-align: center;
+}
+
+
+.solicitud_aceptada {
+    background-color: #198754;
+    color: #fff;
+    border-radius: 8px;
+    display: -webkit-inline-box;
+    padding: 0px 15px 2px 19px;
+    font-size: 14px;
+}
+
+
+.contenedor_detalle_servicio{
+    margin-top: 100px;
+    height: 89vh;
+    overflow-y: scroll;
+    padding-right: 77px;
+    padding-bottom: 100px;
+}
+
+.servicio_name {
+    font-family: 'OpenSans-Regular';
+    font-size: 28px;
+    margin-bottom: 1px;
+    font-weight: 500;
+    color: #0099a8;
+    text-align: center;
+    margin-bottom: 19px;
+}
+
+
+.contenedor_detalle{
+
+    width: 100%;
+    display: table;
+}
+
+.titulo_detalle {
+    font-family: 'OpenSans-Regular';
+    font-weight: 500;
+    font-size: 17px;
+    margin-top: 42px;
+    margin-bottom: 13px;
+    font-weight: 600;
+    color: #0099a8;
+    text-align: center;
+}
+
+.txt_detalle {
+    font-family: 'OpenSans-Regular';
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #0c5c64;
+    text-align: center;
+}
+
+.boton_reAgendar{
+
+    padding: 5px 9px 6px 11px;
+    font-size: 14px;
+    border: none;
+    background-color: #1fc6d7;
+    color: #fff;
+    margin-top: 0px;
+    float: right;
+    width: 100%;
+    border-radius: 6px;
+
+}
+
+.boton_reAgendar_lt {
+    padding: 5px 9px 6px 11px;
+    font-size: 14px;
+    border: none;
+    background-color: #1fc6d7;
+    color: #fff;
+    margin-top: 0px;
+    float: left;
+    width: fit-content;
+    border-radius: 6px;
+    margin-bottom: 13px;
+}
+
+.boton_cancelar_servicio{
+
+    padding: 5px 9px 6px 11px;
+    font-size: 14px;
+    border: none;
+    background-color: #e75252;
+    color: #fff;
+    margin-top: 0px;
+    float: right;
+    width: 100%;
+    border-radius: 6px;
+
+}
+
+ .txt_input{
+    font-family: 'OpenSans-Regular';
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #0c5c64;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.bottom_select {
+    margin-bottom: 35px;
+}
+
+.line_divisora {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: #00a8b9;
+    margin: 44px 0px 30px 0px;
+}
+
+.nombre_trabajador{
+    font-family: 'OpenSans-Regular';
+    font-size: 18px;
+    margin-bottom: 1px;
+    font-weight: 500;
+    color: #0099a8;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.globo_mensajes {
+    width: 100%;
+    display: table;
+    background-color: #1fc6d730;
+    padding: 20px 40px 10px 40px;
+    margin-bottom: 13px;
+}
+
+textarea.textArea {
+    margin-bottom: 12px;
+}

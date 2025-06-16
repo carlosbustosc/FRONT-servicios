@@ -77,15 +77,19 @@ export class ServiciosService {
 
   ///agendar servicio de trabajador
   agendarServicioDeUnTrabajador( datosServicios:any, datosFormulario:any ){
+      
+      console.log(datosServicios)
+      console.log(datosFormulario)
+
 
       const datosServicio = {
 
-        departamento:  datosFormulario.departamento,
-        ciudad:        datosFormulario.ciudad,
-        barrio:        datosFormulario.barrio,
-        direccion:     datosFormulario.direccion,
-        dia:           datosFormulario.dia,    
-        hora:          datosFormulario.hora,
+        departamento:  datosFormulario.value.departamento,
+        ciudad:        datosFormulario.value.ciudad,
+        barrio:        datosFormulario.value.barrio,
+        direccion:     datosFormulario.value.direccion,
+        dia:           datosFormulario.value.dia,    
+        hora:          datosFormulario.value.hora,
         servicios:     datosServicios
 
       }
@@ -98,27 +102,38 @@ export class ServiciosService {
     
 
   //registrarCliente
-  registrarCliente( formulario:any ){
+  registrarCliente( formulario:any, fotoPerfil:any, antecdentes:any ){
     
-    const datosCliente = {
+      
+    //creamso objeto formData
+    const datosCliente = new FormData();
 
-                nombreCompleto:       formulario.nombre,   
-                genero:               formulario.genero,   
-                documento:            formulario.documento,  
-                edad:                 formulario.edad,  
-                fotoPerfil:           formulario.fotoPerfil,  
-                telefono:             formulario.telefono , 
-                email:                formulario.email,  
-                password:             formulario.pass,  
-                departamento:         formulario.departamento,
-                ciudad:               formulario.ciudad, 
-                direccion:            formulario.direccion, 
-                archivoAntecedentes:  formulario.antecedentes,
-                rol: "cliente"
+        datosCliente.append('nombreCompleto', formulario.nombre)
+        datosCliente.append('genero',         formulario.genero)
+        datosCliente.append('documento',      formulario.documento)
+        datosCliente.append('edad',           formulario.edad);
 
-    }
 
-    console.log(datosCliente)
+
+        datosCliente.append('telefono',       formulario.telefono)
+        datosCliente.append('email',          formulario.email)
+        datosCliente.append('password',       formulario.pass)
+        datosCliente.append('departamento',   formulario.departamento)
+        datosCliente.append('ciudad',         formulario.ciudad)
+        datosCliente.append('direccion',      formulario.direccion)
+
+
+
+        datosCliente.append('rol', "cliente")
+
+        
+        //archivos
+        datosCliente.append('fotoPerfil', fotoPerfil)
+        datosCliente.append('archivoAntecedentes', antecdentes)
+
+
+
+
 
     return this.usarHttp.post('http://localhost:5000/registrarCliente', datosCliente)
 
@@ -155,31 +170,35 @@ export class ServiciosService {
   }
 
   //registrar trabajador
-  RegistrarTrabajador( datosFormulario:any ){
-      
-    const datosTrabajador = {
+  RegistrarTrabajador( datosFormulario:any, fotoPersonaC:any, hojaVida:any, campoAntecedentes:any, campoEPS:any  ){
+        
+
+    const datosTrabajador = new FormData()
+
+ 
 
   
-          nombres:         datosFormulario.nombre,       
-          edad:            datosFormulario.edad,        
-          documento:       datosFormulario.documento,   
-          genero:          datosFormulario.genero,       
-          departamento:    datosFormulario.departamento ,
-          ciudad:          datosFormulario.ciudad ,      
-          tipoSangre:      datosFormulario.tipoSangre,   
-          fotoPersona:     datosFormulario.fotoPersona,  
-          documentoHV:     datosFormulario.HV,           
-          documentoAntecedentes: datosFormulario.antecedentes, 
-          telefono:              datosFormulario.telefono,     
-          correoElectronico:     datosFormulario.email,        
-          contrasena:            datosFormulario.pass,        
-          eps:                   datosFormulario.EPS,          
-          contactoDeEmergencia:  datosFormulario.telEmergencia,
-          categoria:    datosFormulario.categoria,
-          subcategoria: datosFormulario.subcategoria
-      
-      }
+          datosTrabajador.append('nombres',           datosFormulario.nombre);       
+          datosTrabajador.append('edad',              datosFormulario.edad)  
+          datosTrabajador.append('documento',         datosFormulario.documento)
+          datosTrabajador.append('genero',            datosFormulario.genero)
+          datosTrabajador.append('departamento',      datosFormulario.departamento)
+          datosTrabajador.append('ciudad',            datosFormulario.ciudad)
+          datosTrabajador.append('tipoSangre',        datosFormulario.tipoSangre)
+          datosTrabajador.append('telefono',          datosFormulario.telefono)
+          datosTrabajador.append('correoElectronico', datosFormulario.email)
+          datosTrabajador.append('contrasena',        datosFormulario.pass)
+          datosTrabajador.append('contactoDeEmergencia', datosFormulario.telEmergencia)
+          datosTrabajador.append('categoria',         datosFormulario.categoria)
+          datosTrabajador.append('subcategoria',     datosFormulario.subcategoria)
+          
+          
+          datosTrabajador.append('fotoPersona', fotoPersonaC)
+          datosTrabajador.append('documentoHV', hojaVida)
+          datosTrabajador.append('documentoAntecedentes', campoAntecedentes)
+          datosTrabajador.append('eps',  campoEPS)
 
+          
       console.log(datosTrabajador)
 
       return this.usarHttp.post('http://localhost:5000/registroTrabajador', datosTrabajador);

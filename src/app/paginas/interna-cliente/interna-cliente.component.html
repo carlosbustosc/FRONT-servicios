@@ -1,0 +1,141 @@
+<app-navbar [ocultarMenuHijo]="ocultarMenu"></app-navbar>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 contenedor_ltsx">
+            <h2 class="titulo_persona">Personas que aceptaron tu solicutud</h2>
+            
+            <div class="contenido_tarjeta">
+                <h2 class="nombre_trabajador">Alejandro pedraza</h2>
+                <p class="nombre_servicio">Limpieza hogar</p>
+                <p class="solicitud_aceptada">Ha aceptado tu solicitud</p>
+            </div>
+
+            <div class="contenido_tarjeta">
+                <h2 class="nombre_trabajador">Alejandro pedraza</h2>
+                <p class="nombre_servicio">Limpieza hogar</p>
+                <p class="solicitud_aceptada">Ha aceptado tu solicitud</p>
+            </div>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-7 contenedor_detalle_servicio">
+
+            <h2 class="servicio_name">Servicio de Alejandro Pedraza</h2>
+            <div class="contenedor_detalle">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="titulo_detalle">Tipo de servicio</h2>
+                        <p  class="txt_detalle">Aseo sala comedor</p>
+                    </div>
+
+                     <div class="col-md-4">
+                        <h2 class="titulo_detalle">Fracción</h2>
+                        <p  class="txt_detalle">Dia completo</p>
+                    </div>
+
+                     <div class="col-md-4">
+                        <h2 class="titulo_detalle">precio COP</h2>
+                        <p  class="txt_detalle">$ 65000</p>
+                    </div>
+                </div>
+
+                <hr class="line_divisora">
+
+                <div class="row">
+                    <h2 class="servicio_name">Detalles del servicio</h2>
+                    
+                    <form [formGroup]="formularioReAgendamiento">
+                        <div class="row caja_agendamiento">
+                        <p class="txt_programe_servicios">Programe su servicio</p>
+
+                            <div class="col-md-4 bottom_select">
+                                <label class="txt_input">departamento del servicio</label>
+                                <select class="form-control" formControlName="departamento">
+                                    <option value="1"> Cundinamarca </option>
+                                </select>
+
+                                <small class="text-danger" *ngIf="validarDepartamento">Seleccione departamento</small>
+                            </div>
+
+                            <div class="col-md-4 bottom_select">
+                                <label class="txt_input">ciudad del servicio</label>
+                                <select class="form-control" formControlName="ciudad">
+                                    <option class="bogota">bogota</option>
+                                </select>
+
+                                <small class="text-danger" *ngIf="validarCiudad">Seleccione ciudad</small>
+
+                            </div>
+
+                            <div class="col-md-4 bottom_select">
+                                <label class="txt_input">Escriba el barrio</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="escriba el barrio" formControlName="barrio">
+
+                                <small class="text-danger" *ngIf="validarBarrio">Seleccione barrio</small>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 bottom_select">
+                                <label class="txt_input">Escriba dirección</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="escriba la direccion del servicio" formControlName="direccion">
+
+                                    <small class="text-danger" *ngIf="validarDireccion">Seleccione dirección</small>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 bottom_select">
+                                <label class="txt_input">Seleccionar dia</label>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" formControlName="dia">
+
+                                    <small class="text-danger" *ngIf="validarDia">Seleccione dia</small>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 bottom_select">
+                                <label class="txt_input">Seleccionar Hora</label>
+                                <div class="form-group">
+                                    <input type="time" class="form-control" formControlName="hora">
+
+                                    <small class="text-danger" *ngIf="validarHora">Seleccione hora</small>
+
+                                </div>
+                            </div>
+                            
+                        
+                            <div class="col-md-4">
+                                <button type="button" class="boton_reAgendar" (click)="ReAgendarServicio()">Re-Agendar Fecha</button>
+                            </div>
+
+                            <div class="col-md-4">
+                                <button type="button" class="boton_cancelar_servicio">Cancelar este servicio</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                 <hr class="line_divisora">
+
+                <h2 class="servicio_name">Mensajes</h2>
+                <div class="globo_mensajes">
+                    <h3 class="nombre_trabajador">Alejandro pedraza</h3>
+                    <p class="txt_Mensaje">He recibido satisfactoriamente el agendamiento muchas gracias.</p>
+                    <button type="button" class="boton_reAgendar_lt" (click)="responderMensaje()" *ngIf="mostrarBtnResponder">Responder mensaje</button>
+                </div>
+                
+                <textarea class="textArea form-control" *ngIf="mostrarCampoMensaje"></textarea>
+                <button  type="button" class="boton_reAgendar_lt" *ngIf="mostrarCampoMensaje">Enviar mensaje</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
